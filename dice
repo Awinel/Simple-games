@@ -1,0 +1,52 @@
+#import random to have random numbers to use it
+import random
+
+
+
+#I create the score
+score = 0
+
+class Dice:
+    
+    #I create random dices using randrange an specifiyng
+    #the range not including 7
+    def random_dices(self):
+        self.dice01 = random.randrange(1, 7)
+        self.dice02 = random.randrange(1, 7)
+        self.dice03 = random.randrange(1, 7)
+        self.dice04 = random.randrange(1, 7)
+        self.dice05 = random.randrange(1, 7)
+        
+
+    #I put together the five dices     
+    def dice(self):
+        print(f"{self.dice01} {self.dice02} {self.dice03} {self.dice04} {self.dice05}")
+
+    def score_points(self):
+        if self == 1:
+            score =+ 100
+            return score
+
+        elif self == 5:
+            score =+ 50
+            return score
+        else:
+            print("Game over")
+
+    def game_on(user_answer):
+
+        while user_answer == True:
+            
+            user_answer = input("Roll dice? [y/n] ")
+
+            if user_answer.lower() == "n" or user_answer.lower() == "no":
+                return False
+
+            elif user_answer.lower() == "y" or user_answer.lower() == "yes":
+                return True
+
+dice = Dice()
+
+dice.game_on()
+dice.dice()
+dice.score_points()
